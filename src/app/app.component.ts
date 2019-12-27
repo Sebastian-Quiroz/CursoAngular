@@ -67,4 +67,9 @@ export class AppComponent {
     // eliminando elementos existentes y/o agregando nuevos elementos.
     this.listNames.splice(index, 1);
   }
+
+  clickProduct(id: number) {
+    console.log('Producto #');
+    console.log(id);
+  }
 }

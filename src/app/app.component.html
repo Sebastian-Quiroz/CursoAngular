@@ -1,6 +1,5 @@
-<input type="text" [(ngModel)]="title">
-{{title}}
-<app-product></app-product>
+<input type="text" [(ngModel)]="title" />
+{{ title }}
 
 <div *ngIf="title === 'sebastian' || title === 'Sebastian'">
   <p>Hola Sebastian</p>
@@ -9,24 +8,24 @@
 <div>
   <div>
     <button (click)="addItem()">Add Item</button>
-
   </div>
   <ul>
     <li *ngIf="listNames.length === 0">
       La lista esta vacia
     </li>
     <li *ngFor="let dato of listNames; index as i">
-     {{i+1}} {{ dato }}
-     <button (click)="deleteItem()">Delete</button>
+      {{ i + 1 }} {{ dato }}
+      <button (click)="deleteItem()">Delete</button>
     </li>
   </ul>
 </div>
 
-<div *ngFor="let product of products">
-  {{ product.title }}
-  <!-- Usamos [] para permitir modificar la variable src
-  y asi poder reasignar su valor (Property Binding)-->
-  <img [src]="product.image" alt="product">
-  {{ product.price }}
-  {{ product.description }}
+<div *ngFor="let producto of products">
+  <!-- Gracias al @Input que se agrego en la clase 
+    'producto.component.ts' a la variable llamada 'product' podemos 
+    usar PROPERTY BINDING [] para recibir su valor desde 
+    otro componente que en este caso es el Array 'products'
+    proveniente de 'app.component.ts' y de esta manera nos muestra
+    todas las propiedades sin necesidad de declararlas manualmente-->
+  <app-product (productClicked)="clickProduct($event)" [product]="producto"></app-product>
 </div>
