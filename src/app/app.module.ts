@@ -6,9 +6,15 @@ import { AppComponent } from './app.component';
 
 // Importaciones adicionales para el proyecto
 import { FormsModule } from '@angular/forms';
+
+// Componente
+import { ProductComponent } from './components/product.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // Declaracion de componentes
+    // creados para que Angular los reconozca
+    ProductComponent
   ],
   imports: [
     BrowserModule,
