@@ -38,7 +38,7 @@ export class ProductComponent implements OnChanges, OnInit, OnDestroy {
     /*
     ngOnChanges y ngDoCheck tienen un error de colisión,
     ya que los dos pueden cumplir la tarea de escuchar
-    por cambios del componente. 
+    por cambios del componente.
     El primero es la forma nativa de Angular,
     el segundo es una forma customizada para ello.
 
@@ -61,5 +61,4 @@ export class ProductComponent implements OnChanges, OnInit, OnDestroy {
         console.log('Añadir al carrito');
         this.productClicked.emit(this.product.id);
     }
-
 }
