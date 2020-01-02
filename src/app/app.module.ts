@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './components/product.component';
 import { CartComponent } from './cart/cart.component';
 import { ExponentialPipePipe } from './exponential-pipe.pipe';
+import { HighlightDirective } from './highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { ExponentialPipePipe } from './exponential-pipe.pipe';
     // creados para que Angular los reconozca
     ProductComponent,
     CartComponent,
-    ExponentialPipePipe
+    ExponentialPipePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
