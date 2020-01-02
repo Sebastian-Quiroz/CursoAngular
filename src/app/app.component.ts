@@ -9,6 +9,7 @@ import { Product } from './product.model';
 })
 export class AppComponent {
   title = 'project-store';
+  powerNum = 10;
 
   listNames = ['Sebastian', 'Quiroz', 'Adriana'];
   products: Product[] = [
