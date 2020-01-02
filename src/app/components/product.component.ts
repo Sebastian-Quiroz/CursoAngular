@@ -25,6 +25,9 @@ export class ProductComponent implements OnChanges, OnInit, OnDestroy {
     // *Se debe incialiazar el objeto EventEmitter
     @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
+    // Obtiene la fecha actual del sistema
+    today = new Date();
+
     constructor() {
         console.log('1. constructor');
     }

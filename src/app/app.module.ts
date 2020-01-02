@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 
 // Componente
 import { ProductComponent } from './components/product.component';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
     // Declaracion de componentes
     // creados para que Angular los reconozca
-    ProductComponent
+    ProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
