@@ -1,0 +1,25 @@
+<p>demo works!</p>
+<input type="text" [(ngModel)]="title" />
+{{ title }}
+<p>
+  <input type="text" [(ngModel)]="powerNum" />
+  {{ powerNum | exponentialPipe}}
+</p>
+<div *ngIf="title === 'sebastian' || title === 'Sebastian'">
+  <p>Hola Sebastian</p>
+</div>
+
+<div>
+  <div>
+    <button (click)="addItem()">Add Item</button>
+  </div>
+  <ul>
+    <li *ngIf="listNames.length === 0">
+      La lista esta vacia
+    </li>
+    <li *ngFor="let dato of listNames; index as i">
+      {{ i + 1 }} {{ dato }}
+      <button (click)="deleteItem()">Delete</button>
+    </li>
+  </ul>
+</div>
