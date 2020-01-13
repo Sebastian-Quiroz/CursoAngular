@@ -1,0 +1,14 @@
+<app-header></app-header>
+<!--
+    Se crea esta plantilla layout 
+    donde se puede modifcar su contenido
+    sin necesidad de agregar los componentes header y fooder
+    dentro de las demas paginas, nos permite solo actualizar
+    y llamar los componentes hijos gracias a <router-outlet>.
+
+        Por Defecto como es la plantilla principal la definiremos
+        en la ruta principal '' (ver: app-routing.module.ts)
+-->
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

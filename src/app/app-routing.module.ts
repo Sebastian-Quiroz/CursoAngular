@@ -8,32 +8,41 @@ import { ContactComponent } from './contact/contact.component';
 import { DemoComponent } from './demo/demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent} from './product-detail/product-detail.component';
+import { LayoutComponent } from './layout/layout.component';
 
 // Se agrega cada una de las rutas con su respectivo componente
 const routes: Routes = [
   {
-    // Ruta cuando no se especifica ruta exacta
-    // redirecciona a /home.
+    // Ruta 'Principal', que anida rutas hijas
+    // Esta ruta contiene el componente que creamos como Plantilla
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    // El simbolo '/' NO DE DEBE PONER '/home'
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'products',
-    component: ProductsComponent
-  },
-  {
-    path: 'products/:idProduct',
-    component: ProductDetailComponent
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
+    component: LayoutComponent,
+    children: [
+      {
+        // Ruta cuando no se especifica ruta exacta
+        // redirecciona a /home.
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+      },
+      {
+        // El simbolo '/' NO DE DEBE PONER '/home'
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'products',
+        component: ProductsComponent
+      },
+      {
+        path: 'products/:idProduct',
+        component: ProductDetailComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
+      }
+    ]
   },
   {
     path: 'demo',
