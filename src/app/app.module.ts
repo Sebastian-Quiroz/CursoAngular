@@ -8,18 +8,20 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 // Componentes
-import { ProductComponent } from './components/product.component';
+import { ProductComponent } from './product/components/product/product.component';
 import { CartComponent } from './cart/cart.component';
-import { ExponentialPipePipe } from './exponential-pipe.pipe';
-import { HighlightDirective } from './highlight.directive';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { DemoComponent } from './demo/demo.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
+
+// Importado un modulo que sera compartido por otros modulos
+import { SharedModule } from './shared/shared.module';
+// Modulo que sera un core
+import { CoreModule } from './core/core.module';
+
 
 @NgModule({
   declarations: [
@@ -28,13 +30,9 @@ import { LayoutComponent } from './layout/layout.component';
     // creados para que Angular los reconozca
     ProductComponent,
     CartComponent,
-    ExponentialPipePipe,
-    HighlightDirective,
     ProductsComponent,
     ContactComponent,
     DemoComponent,
-    HeaderComponent,
-    FooterComponent,
     PageNotFoundComponent,
     ProductDetailComponent,
     LayoutComponent,
@@ -43,7 +41,11 @@ import { LayoutComponent } from './layout/layout.component';
     BrowserModule,
     AppRoutingModule,
     // Imports agregados a este proyecto
-    FormsModule
+    FormsModule,
+    // Modulo con componentes compartidos
+    SharedModule,
+    // ModuloCore
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

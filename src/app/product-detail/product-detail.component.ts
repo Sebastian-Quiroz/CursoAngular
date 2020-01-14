@@ -3,7 +3,8 @@ import { Product } from '../product.model';
 // Importacion para obtener informacion de una ruta y objeto tipo Parametro
 import { ActivatedRoute, Params } from '@angular/router';
 // Importacion de servicios
-import { ProductsService } from './../products.service';
+import { ProductsService } from '../core/services/products/products.service';
+
 
 @Component({
   selector: 'app-product-detail',
