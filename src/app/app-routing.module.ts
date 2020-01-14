@@ -9,6 +9,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProductDetailComponent} from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 
+// Importacion de guardian creado
+import { AdminGuard } from './admin.guard';
+
 // Se agrega cada una de las rutas con su respectivo componente
 const routes: Routes = [
   {
@@ -40,6 +43,8 @@ const routes: Routes = [
       },
       {
         path: 'contact',
+        // Asignacion de un guardian ya creado
+        canActivate: [AdminGuard],
         component: ContactComponent
       }
     ]
