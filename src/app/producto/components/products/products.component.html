@@ -1,0 +1,15 @@
+<p>products works!</p>
+<div class="product-grid">
+    <!-- Gracias al @Input que se agrego en la clase 
+      'producto.component.ts' a la variable llamada 'product' podemos 
+      usar PROPERTY BINDING [] para recibir su valor desde 
+      otro componente que en este caso es el Array 'products'
+      proveniente de 'app.component.ts' y de esta manera nos muestra
+      todas las propiedades sin necesidad de declararlas manualmente-->
+    <app-product
+      *ngFor="let producto of products"
+      (productClicked)="clickProduct($event)"
+      [product]="producto"
+    >
+    </app-product>
+  </div>

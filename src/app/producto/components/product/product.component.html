@@ -1,0 +1,33 @@
+<!--
+  appHighlight es una directiva creada para modificar
+  el background del elemento que recibe
+-->
+<h3 appHighlight>
+  {{ product.title | uppercase }}
+</h3>
+
+<!-- Usamos [] para permitir modificar la variable src
+  y asi poder reasignar su valor [Property Binding]-->
+<img
+  [src]="product.image"
+  alt="product"
+/>
+<strong>
+  <!-- slicePipe Permite mostrar una cadena de caracteres
+      en un rango definido.
+      currencyPipe permite manejar formato 
+      Monedas segun la norma ISO 4217 
+  -->
+  {{ product.price | currency: "COP " }}
+  {{ product.description | slice: 0:10 }}
+</strong>
+<!--
+  DatePipe Permite manipular el Formato de la fecha
+-->
+<p>{{ today | date: "full" }}</p>
+
+<button (click)="addCart()">Agregar al carrito</button>
+<!--
+  Property binding permite tambien concatenar cadenas con datos
+-->
+<a [routerLink]="['/products',product.id]"> VER DETALLE</a>
