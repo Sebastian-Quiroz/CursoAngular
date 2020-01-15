@@ -2,11 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 // Rutas de los componentes para enlazar con su respectivo path
-import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component';
-import { DemoComponent } from './demo/components/demo/demo.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetailComponent} from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 
 // Importacion de guardian creado
@@ -35,17 +30,21 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductsComponent
-      },
-      {
-        path: 'products/:idProduct',
-        component: ProductDetailComponent
+        // component: ProductsComponent
+        loadChildren: () => import('./producto/product.module').then(m => m.ProductoModule)
       },
       {
         path: 'contact',
         // Asignacion de un guardian ya creado
         canActivate: [AdminGuard],
-        component: ContactComponent
+        // component: ContactComponent
+        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+      },
+      {
+        // Pagina 404, por si el usuario ingresa una ruta no existente
+        path: '**',
+        // component: PageNotFoundComponent
+        loadChildren: () => import ('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
       }
     ]
   },
@@ -53,11 +52,6 @@ const routes: Routes = [
     path: 'demo',
     // component: DemoComponent
     loadChildren: () => import ('./demo/demo.module').then(m => m.DemoModule)
-  },
-  {
-    // Pagina 404, por si el usuario ingresa una ruta no existente
-    path: '**',
-    component: PageNotFoundComponent
   }
 ];
 

@@ -8,6 +8,7 @@ import { HighlightDirective } from './directive/highlight/highlight.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     ExponentialPipePipe,
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent
   ],
   exports: [
     ExponentialPipePipe,
