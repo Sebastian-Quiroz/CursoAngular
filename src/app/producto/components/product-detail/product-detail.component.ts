@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // Importacion para obtener informacion de una ruta y objeto tipo Parametro
 import { ActivatedRoute, Params } from '@angular/router';
 // Importacion de servicios
-import { Product } from 'src/app/product.model';
+import { Product } from 'src/app/core/models/product.model';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
 

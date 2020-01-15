@@ -8,12 +8,6 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 // Componentes
-import { ProductComponent } from './product/components/product/product.component';
-import { CartComponent } from './cart/cart.component';
-import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
 
 // Importado un modulo que sera compartido por otros modulos
@@ -27,12 +21,6 @@ import { CoreModule } from './core/core.module';
     AppComponent,
     // Declaracion de componentes
     // creados para que Angular los reconozca
-    ProductComponent,
-    CartComponent,
-    ProductsComponent,
-    ContactComponent,
-    PageNotFoundComponent,
-    ProductDetailComponent,
     LayoutComponent,
   ],
   imports: [
