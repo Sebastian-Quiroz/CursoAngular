@@ -26,9 +26,18 @@
   DatePipe Permite manipular el Formato de la fecha
 -->
 <p>{{ today | date: "full" }}</p>
+<!--
+  Se Agrega Botton cn Angular Material, Recordar que primero
+  se importo la libreria en el Modulo de Material,
+  se le permitio que se pudiera exportar para ser usado en otros modulos
+  Y finalmente se importo el Modulo d Material al Moduloq ue lo usara
+  en este caso Product.model
 
-<button (click)="addCart()">Agregar al carrito</button>
+  Excelente documentacion en AngularMaterial.io
+-->
+<button (click)="addCart()"mat-raised-button color="primary">Agregar al carrito</button>
 <!--
   Property binding permite tambien concatenar cadenas con datos
 -->
 <a [routerLink]="['/products',product.id]"> VER DETALLE</a>
+

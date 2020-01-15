@@ -14,6 +14,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared/shared.module';
 // Modulo que sera un core
 import { CoreModule } from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { CoreModule } from './core/core.module';
     // Modulo con componentes compartidos
     SharedModule,
     // ModuloCore
-    CoreModule
+    CoreModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

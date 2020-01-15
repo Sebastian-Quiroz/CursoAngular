@@ -7,17 +7,21 @@ import { ProductRoutingModule } from './product-routing.model';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductsComponent } from './components/products/products.component';
 
+// Importacion del Modulo que maneja a ANGULAR MATERIAL
+import { MaterialModule } from './../material/material.module';
 
 @NgModule({
   declarations: [
     ProductComponent,
     ProductDetailComponent,
-    ProductsComponent
+    ProductsComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    // Llamado a MATERIAL MODULE
+    MaterialModule
   ]
 })
 export class ProductoModule { }
