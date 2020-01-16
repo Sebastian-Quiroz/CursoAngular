@@ -9,10 +9,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
-<<<<<<< HEAD
+
 import { MaterialModule } from '../material/material.module';
-=======
->>>>>>> 1f105c0afa8852824dd292152154132ca028bfb3
 
 
 @NgModule({
