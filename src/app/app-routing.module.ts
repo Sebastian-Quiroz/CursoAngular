@@ -31,35 +31,47 @@ const routes: Routes = [
       {
         path: 'products',
         // component: ProductsComponent
-        loadChildren: () => import('./producto/product.module').then(m => m.ProductoModule)
+        loadChildren: () =>
+          import('./producto/product.module').then(m => m.ProductoModule)
       },
       {
         path: 'contact',
         // Asignacion de un guardian ya creado
         canActivate: [AdminGuard],
         // component: ContactComponent
-        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+        loadChildren: () =>
+          import('./contact/contact.module').then(m => m.ContactModule)
       },
       {
-        // Pagina 404, por si el usuario ingresa una ruta no existente
-        path: '**',
-        // component: PageNotFoundComponent
-        loadChildren: () => import ('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+        path: 'demo',
+        // component: DemoComponent
+        loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
       }
     ]
   },
   {
-    path: 'demo',
-    // component: DemoComponent
-    loadChildren: () => import ('./demo/demo.module').then(m => m.DemoModule)
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  // Esta ruta debe ir siempre al final como ultima opcion
+  {
+    // Pagina 404, por si el usuario ingresa una ruta no existente
+    path: '**',
+    // component: PageNotFoundComponent
+    loadChildren: () =>
+      import('./page-not-found/page-not-found.module').then(
+        m => m.PageNotFoundModule
+      )
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    // Seleccionamos que Dinamicamente escoja una Opcion de PREGARGA
-    preloadingStrategy: PreloadAllModules
-  })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      // Seleccionamos que Dinamicamente escoja una Opcion de PREGARGA
+      preloadingStrategy: PreloadAllModules
+    })
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

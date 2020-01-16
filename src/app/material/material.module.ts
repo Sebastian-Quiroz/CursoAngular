@@ -7,6 +7,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatCardModule} from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @NgModule({
@@ -17,7 +20,11 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatIconModule,
     MatBadgeModule,
-    MatCardModule
+    MatCardModule,
+    // Generados por @angular/material:addres-form
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule
   ],
   // Modulos que pueden usar otros
   exports: [
@@ -26,10 +33,13 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatIconModule,
     MatBadgeModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule
   ]
 })
-// Cualquier Modulo que quiera Usar
+// Cualquier Modulo que quiera usar
 // Angular Materias debera importar o llamar
 // este modulo
 export class MaterialModule { }
