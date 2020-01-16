@@ -1,6 +1,26 @@
 <p>header works!</p>
-<nav>
-    <a routerLink="/products" routerLinkActive="pagActual">Products</a>
-    <a routerLink="/contact" routerLinkActive="pagActual">Contact</a>
-    <a routerLink="/home" routerLinkActive="pagActual">Home</a>
-</nav>
+<!--
+    mat-toolbar es una etiqueta traida de AngularMaterial
+-->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <!--
+        Aca se implementa flexbox mas info en http://flexboxgrid.com/
+    -->
+    <div class="row between-xs middle-xs myheader-row">
+      <nav>
+        <a mat-button routerLink="/products" routerLinkActive="pagActual"
+          >Products</a
+        >
+        <a mat-button routerLink="/contact" routerLinkActive="pagActual"
+          >Contact</a
+        >
+        <a mat-button routerLink="/home" routerLinkActive="pagActual">Home</a>
+      </nav>
+      <a mat-raised-button matBadge="8" matBadgeColor="warn">
+        <mat-icon>shopping_cart</mat-icon>
+        Carrito
+      </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
