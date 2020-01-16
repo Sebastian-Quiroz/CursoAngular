@@ -31,14 +31,19 @@ const routes: Routes = [
       {
         path: 'products',
         // component: ProductsComponent
+<<<<<<< HEAD
         loadChildren: () =>
           import('./producto/product.module').then(m => m.ProductoModule)
+=======
+        loadChildren: () => import('./producto/product.module').then(m => m.ProductoModule)
+>>>>>>> 1f105c0afa8852824dd292152154132ca028bfb3
       },
       {
         path: 'contact',
         // Asignacion de un guardian ya creado
         canActivate: [AdminGuard],
         // component: ContactComponent
+<<<<<<< HEAD
         loadChildren: () =>
           import('./contact/contact.module').then(m => m.ContactModule)
       },
@@ -46,10 +51,20 @@ const routes: Routes = [
         path: 'demo',
         // component: DemoComponent
         loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
+=======
+        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+      },
+      {
+        // Pagina 404, por si el usuario ingresa una ruta no existente
+        path: '**',
+        // component: PageNotFoundComponent
+        loadChildren: () => import ('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+>>>>>>> 1f105c0afa8852824dd292152154132ca028bfb3
       }
     ]
   },
   {
+<<<<<<< HEAD
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
@@ -62,6 +77,11 @@ const routes: Routes = [
       import('./page-not-found/page-not-found.module').then(
         m => m.PageNotFoundModule
       )
+=======
+    path: 'demo',
+    // component: DemoComponent
+    loadChildren: () => import ('./demo/demo.module').then(m => m.DemoModule)
+>>>>>>> 1f105c0afa8852824dd292152154132ca028bfb3
   }
 ];
 

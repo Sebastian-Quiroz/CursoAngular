@@ -28,7 +28,7 @@ export class ProductDetailComponent implements OnInit {
       // recordar que 'idProduct' se definio en la rutas
       // 'products/:idProduct'
       // y se obtiene exactamente el nombre que se le asigno
-      const id = params.idProduct;
+      const id = params.id;
       console.log(id);
       this.product = this.productsService.getProduct(id);
       console.log(this.product);
