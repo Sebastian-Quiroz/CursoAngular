@@ -8,6 +8,7 @@ body {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    gap: 10px ;
 }
 //@ Media permite manejar la cantidad de 
 // componentes que se veran en pantalla segun su
@@ -15,6 +16,12 @@ body {
 @media(min-width:576px){
     .product-grid{
         grid-template-columns: repeat(3, 1fr);
+        gap: 20px 10px;
+    }
+    .container {
+        max-width: 1110px;;
+        padding-right: 16px;
+        padding-left: 16px;
     }
 }
 /*
@@ -50,3 +57,11 @@ body {
 */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}

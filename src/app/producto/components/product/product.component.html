@@ -1,27 +1,60 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{ product.title | uppercase }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{ product.price | currency: "COP " }}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <div class="div-image">
+    <img
+      [src]="product.image"
+      [routerLink]="['/products', product.id]"
+      alt="product"
+    />
+  </div>
+
+  <mat-card-content>
+    <!-- slicePipe Permite mostrar una cadena de caracteres
+      en un rango definido.
+      currencyPipe permite manejar formato 
+      Monedas segun la norma ISO 4217 
+    -->
+    <p>{{ product.description | slice: 0:10 }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="addCart()" mat-raised-button color="primary">
+      Agregar al carrito
+    </button>
+    <!--
+      Property binding permite tambien concatenar cadenas con datos
+    -->
+    <a mat-raised-button [routerLink]="['/products', product.id]">
+      VER DETALLE
+    </a>
+  </mat-card-actions>
+</mat-card>
+
 <!--
   appHighlight es una directiva creada para modificar
   el background del elemento que recibe
--->
+
 <h3 appHighlight>
   {{ product.title | uppercase }}
 </h3>
 
+-->
 <!-- Usamos [] para permitir modificar la variable src
-  y asi poder reasignar su valor [Property Binding]-->
+  y asi poder reasignar su valor [Property Binding]
 <img
   [src]="product.image"
-  [routerLink]="['/products',product.id]"
+  [routerLink]="['/products', product.id]"
   alt="product"
 />
-<strong>
-  <!-- slicePipe Permite mostrar una cadena de caracteres
-      en un rango definido.
-      currencyPipe permite manejar formato 
-      Monedas segun la norma ISO 4217 
-  -->
-  {{ product.price | currency: "COP " }}
-  {{ product.description | slice: 0:10 }}
-</strong>
+-->
+
 <!--
   DatePipe Permite manipular el Formato de la fecha
 -->
@@ -35,9 +68,3 @@
 
   Excelente documentacion en AngularMaterial.io
 -->
-<button (click)="addCart()"mat-raised-button color="primary">Agregar al carrito</button>
-<!--
-  Property binding permite tambien concatenar cadenas con datos
--->
-<a [routerLink]="['/products',product.id]"> VER DETALLE</a>
-
