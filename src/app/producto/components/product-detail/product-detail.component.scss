@@ -1,0 +1,13 @@
+.div-image {
+    height: 300px;
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+    img {
+      position: absolute;
+      top: 40%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+      max-width: 60%;
+    }
+  }

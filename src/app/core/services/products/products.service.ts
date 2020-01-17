@@ -25,7 +25,10 @@ export class ProductsService {
   // Retorna el producto que coincida con el id
   getProduct(id: string) {
     // return this.products.find(item => id === item.id);
-    return this.http.get(`https://platzi-store.herokuapp.com/products/${id}`);
+
+    // Realiza la peticion GET concatenando el ID que reciba y adicional el metodo get
+    // ya tipa el dato que pretende recibir
+    return this.http.get<Product>(`https://platzi-store.herokuapp.com/products/${id}`);
   }
 
 /*

@@ -1,11 +1,23 @@
 <p>product-detail works!</p>
-<div>
-    <img [src]="product.image" alt="Imagen del Producto">
+<!--
+    Se agrega una condicion que analiza que el producto no este NULL 
+    y si no esta null si renderizara en la vista
+-->
+<div *ngIf="product">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Nombre: {{ product.title }}</mat-card-title>
+      <mat-card-subtitle>Precio: {{ product.price | currency }}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="div-image">
+      <img [src]="product.image" alt="Imagen del Producto" />
+    </div>
+    <mat-card-content>
+      <p>{{ product.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Ok</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
-<div>
-    <ul>
-        <li>Nombre: {{product.title}}</li>
-        <li>Precio: {{product.price | currency}}</li>
-    </ul>
-    <p>{{product.description}}</p>
-</div>
+

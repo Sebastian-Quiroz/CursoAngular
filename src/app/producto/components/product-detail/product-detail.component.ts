@@ -30,8 +30,17 @@ export class ProductDetailComponent implements OnInit {
       // y se obtiene exactamente el nombre que se le asigno
       const id = params.id;
       console.log(id);
+      this.fetchProduct(id);
       // this.product = this.productsService.getProduct(id);
-      console.log(this.product);
+      // console.log(this.product);
+    });
+  }
+
+  fetchProduct(id: string) {
+    this.productsService.getProduct(id)
+    .subscribe(product => {
+      console.log(product);
+      this.product = product;
     });
   }
 }
