@@ -40,6 +40,19 @@ export class ProductsService {
     // Las peticiones POST tienen un PATH y un BODY
     return this.http.post(`${environment.url_api}/products/`, product);
   }
+
+  // Uso de la peticion PUT
+  updateProduct(id: string, changes: Partial<Product>) {
+    // La peticion put necesita dos partes, su PATH y los cambios que se haran a la info de ese PATH
+    // Se usa la 'PARCIAL<>' para nos permita usar una parte del objeto que recibe
+    return this.http.put(`${environment.url_api}/products/${id}`, changes);
+  }
+
+  // Uso peticion DELETE
+  deleteProduct(id: string) {
+    return this.http.delete(`${environment.url_api}/products/${id}`);
+  }
+
 /*
   De esta manera anteriormente se llamaban los dato
   para mostrarlos en la pagina
