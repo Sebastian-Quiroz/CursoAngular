@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../models/product.model';
+
 // Importacion de HttpClient Que nos permitira conectarnos con el
 // modulo HttpClientModule que se configuro en el app.module.ts
 import { HttpClient } from '@angular/common/http';
 
+// Aca se encuentra configurado la ruta de nuestra API ya que por buena practica
+// se debe tener una variable que contenga la URL y asi se pueda reutilizar
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +23,7 @@ export class ProductsService {
     // Mediante la variable http creada, se usa su metodo GET para hacer un llamado
     // de datos a la URL que contiene los datos de esa API
     // Al Metodo GET se le puede decir que tipo de PARAMETRO VA A RESOLVER, en este caso un Array Products
-    return this.http.get<Product[]>('https://platzi-store.herokuapp.com/products/');
+    return this.http.get<Product[]>(`${environment.url_api}/products/`);
   }
 
   // Retorna el producto que coincida con el id
@@ -28,7 +32,7 @@ export class ProductsService {
 
     // Realiza la peticion GET concatenando el ID que reciba y adicional el metodo get
     // ya tipa el dato que pretende recibir
-    return this.http.get<Product>(`https://platzi-store.herokuapp.com/products/${id}`);
+    return this.http.get<Product>(`${environment.url_api}/products/${id}`);
   }
 
 /*
