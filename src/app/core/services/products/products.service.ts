@@ -35,6 +35,11 @@ export class ProductsService {
     return this.http.get<Product>(`${environment.url_api}/products/${id}`);
   }
 
+  // Uso de la peticion POST
+  createProduct(product: Product) {
+    // Las peticiones POST tienen un PATH y un BODY
+    return this.http.post(`${environment.url_api}/products/`, product);
+  }
 /*
   De esta manera anteriormente se llamaban los dato
   para mostrarlos en la pagina

@@ -43,4 +43,20 @@ export class ProductDetailComponent implements OnInit {
       this.product = product;
     });
   }
+
+  createProduct() {
+
+    const newProduct: Product = {
+      id: '20',
+      image: 'ASAS',
+      title: 'ProductoDesdePost',
+      price: 101010,
+      description: 'Producto Creado desde una peticion POST'
+    };
+
+    this.productsService.createProduct(newProduct)
+    .subscribe(product => {
+      console.log(product);
+    });
+  }
 }
