@@ -15,6 +15,10 @@ import { SharedModule } from './shared/shared.module';
 // Modulo que sera un core
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// Modulo para hacer peticiones HTTP (HttpClientModule))
+// MUYYY IMPORTANTE PARA CONECTARSE A UNA REST API
+// El HTTP-CLIENT debe importarse en el servicio que va hacer el llamado
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,7 +37,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SharedModule,
     // ModuloCore
     CoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // Modulo que permite hacer peticones HTTP
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
