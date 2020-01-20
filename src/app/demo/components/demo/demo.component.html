@@ -19,7 +19,7 @@
     </li>
     <li *ngFor="let dato of listNames; index as i">
       {{ i + 1 }} {{ dato }}
-      <button (click)="deleteItem()">Delete</button>
+      <button (click)="deleteItem(i)">Delete</button>
     </li>
   </ul>
 </div>
