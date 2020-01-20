@@ -31,4 +31,13 @@ export class ProductsListComponent implements OnInit {
       }
     );
   }
+
+  deleteProduct(id: string) {
+    this.productsService.deleteProduct(id)
+    .subscribe( rta => {
+      console.log(rta);
+      this.fecthProducts();
+      }
+    );
+  }
 }
