@@ -5,6 +5,7 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 // Implementa Router para navidad a una ruta que desemos despues de alguna accion que planeemos
 import { Router } from '@angular/router';
 
+import { MyValidators } from 'src/app/utils/myValidators';
 @Component({
   selector: 'app-form-product',
   templateUrl: './form-product.component.html',
@@ -30,7 +31,7 @@ export class FormProductComponent implements OnInit {
     this.form = this.formBuilder.group({
       id: ['', [Validators.required]],
       title: ['', [Validators.required]],
-      price: [0, [Validators.required]],
+      price: [0, [Validators.required, MyValidators.isPriceValid]],
       image: [''],
       description: ['', [Validators.required]]
     });
