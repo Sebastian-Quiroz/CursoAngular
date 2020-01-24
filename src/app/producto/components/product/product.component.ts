@@ -9,6 +9,8 @@ import {
     OnDestroy,
 } from '@angular/core';
 import { Product } from 'src/app/core/models/product.model';
+// trae el servicio que maneja componente reactivo
+import { CartService } from 'src/app/core/services/cart.service';
 
 @Component({
     selector: 'app-product',
@@ -28,7 +30,9 @@ export class ProductComponent implements OnChanges, OnInit, OnDestroy {
     // Obtiene la fecha actual del sistema
     today = new Date();
 
-    constructor() {
+    constructor(
+        private cartService: CartService
+    ) {
         console.log('1. constructor');
     }
 
@@ -63,6 +67,7 @@ export class ProductComponent implements OnChanges, OnInit, OnDestroy {
     // Funcion que tiene la logic de que se va a realizar
     addCart() {
         console.log('Añadir al carrito');
-        this.productClicked.emit(this.product.id);
+        // this.productClicked.emit(this.product.id);
+        this.cartService.addCart(this.product);
     }
 }
