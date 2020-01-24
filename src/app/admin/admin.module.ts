@@ -23,6 +23,7 @@ import { TableComponent } from './componets/table/table.component';
 import { DashboardComponent } from './componets/dashboard/dashboard.component';
 import { ProductsListComponent } from './componets/products-list/products-list.component';
 import { FormProductComponent } from './componets/form-product/form-product.component';
+import { ProductEditComponent } from './componets/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FormProductComponent } from './componets/form-product/form-product.comp
     TableComponent,
     DashboardComponent,
     ProductsListComponent,
-    FormProductComponent
+    FormProductComponent,
+    ProductEditComponent
   ],
   imports: [
     CommonModule,
