@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Quitados de app.module
 
@@ -29,6 +30,8 @@ import { MaterialModule } from '../material/material.module';
   ],
   imports: [
     CommonModule,
+    // Implementar formularios reactivos
+    ReactiveFormsModule,
     // permite usar routerLink
     RouterModule,
     // Importa el modulo creado para AngularMaterial

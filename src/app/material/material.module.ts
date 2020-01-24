@@ -18,6 +18,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
@@ -38,7 +39,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatGridListModule,
     MatMenuModule,
     MatSortModule,
-    LayoutModule
+    LayoutModule,
+    MatFormFieldModule
 
   ],
   // Modulos que pueden usar otros
@@ -58,7 +60,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatGridListModule,
     MatMenuModule,
     MatSortModule,
-    LayoutModule
+    LayoutModule,
+    MatFormFieldModule
   ]
 })
 // Cualquier Modulo que quiera usar

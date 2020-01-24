@@ -1,17 +1,66 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <div class="row end-xs middle-xs myfooter-row">
-      <div class="col-xs-2">
-        <span>footer works!</span>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Productos</h3>
+          <ul>
+            <li>
+              <a routerlink="/products">Nuevos Productos</a>
+            </li>
+            <li>
+              <a routerlink="/products">En oferta</a>
+            </li>
+            <li>
+              <a routerlink="/products">Ãšltimos productos</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-xs-2">
-        <mat-icon
-          class="example-icon"
-          aria-hidden="false"
-          aria-label="Example user verified icon"
-          >verified_user</mat-icon
-        >
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Acerca de PlatziStore</h3>
+          <ul>
+            <li><a routerlink="/about-us">Sobre nosotros</a></li>
+            <li><a routerlink="/stores">Nuestras tiendas</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="box">
+          <h3>Contacto</h3>
+          <mat-form-field>
+            <input
+              matInput
+              [formControl]="emailField"
+              placeholder="Digite su correo"
+              type="email"
+            />
+          </mat-form-field>
+
+          <button
+            [disabled]="emailField.invalid"
+            (click)="sendEmail()"
+            mat-raised-button=""
+          >
+            enviar
+          </button>
+          <p *ngIf="emailField.invalid">Campo Invalido</p>
+        </div>
       </div>
     </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+  </div>
+</footer>
+<div class="row end-xs middle-xs myfooter-row">
+  <div class="col-xs-2">
+    <span>footer works!</span>
+  </div>
+  <div class="col-xs-2">
+    <mat-icon
+      class="example-icon"
+      aria-hidden="false"
+      aria-label="Example user verified icon"
+      >verified_user</mat-icon
+    >
+  </div>
+</div>
